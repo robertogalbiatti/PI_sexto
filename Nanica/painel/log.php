@@ -48,7 +48,7 @@
 
           $conn = mysqli_connect($servername, $username, $password, $dbname);
           
-          $sql = "SELECT * FROM `log`";
+          $sql = "SELECT * FROM `log` ORDER BY id_log DESC ";
           $busca = mysqli_query($conn, $sql);
 
           while ($array = mysqli_fetch_array($busca)) {
