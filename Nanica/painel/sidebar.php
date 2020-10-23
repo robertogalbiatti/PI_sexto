@@ -65,6 +65,7 @@
             <!--<h6 class="collapse-header">Cadastros</h6>-->
             <a class="collapse-item" href="/painel/cadastro_fornecedor.php">Cadastrar Fornecedor</a>
             <a class="collapse-item" href="/painel/cadastro_cesta.php">Cadastrar Cesta</a>
+            <a class="collapse-item" href="/painel/usuario_cadastro.php">Cadastrar Usuário</a>
           </div>
         </div>
       </li>
@@ -81,6 +82,7 @@
             <a class="collapse-item" href="/painel/log.php">Logs</a>
             <a class="collapse-item" href="/painel/fornecedores.php">Fornecedores</a>
             <a class="collapse-item" href="/painel/cestas.php">Cestas</a>
+            <a class="collapse-item" href="/painel/usuario.php">Usuários</a>
             <!--<a class="collapse-item" href="utilities-animation.html">Animations</a>
             <a class="collapse-item" href="utilities-other.html">Other</a>-->
           </div>
