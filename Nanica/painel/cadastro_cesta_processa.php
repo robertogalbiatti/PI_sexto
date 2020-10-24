@@ -1,10 +1,9 @@
 <?php 
     include '../conexao.php';
-    $tamanho = $_POST['tamanho'];
-    $tipo = $_POST['tipo'];
+    $nome= $_POST['nome'];
     $preco = $_POST['preco'];
 
-    $sql = "INSERT INTO cadastro_cesta (id_cadastro_cesta, tamanho, tipo, preco) VALUES (null, '$tamanho','$tipo','$preco')";
+    $sql = "INSERT INTO cadastro_cesta (id_cadastro_cesta, nome, preco) VALUES (null, '$nome','$preco')";
     $inserir = mysqli_query($conn, $sql);
     //echo var_dump($razao_social);
     

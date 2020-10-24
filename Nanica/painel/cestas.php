@@ -23,16 +23,14 @@
         <thead>
           <tr>
             <th>Id</th>
-            <th>Tamanho</th>
-            <th>Tipo</th>
+            <th>Nome</th>
             <th>Preço</th>
           </tr>
         </thead>
         <tfoot>
           <tr>
             <th>Id</th>
-            <th>Tamanho</th>
-            <th>Tipo</th>
+            <th>Nome</th>
             <th>Preço</th>
           </tr>
         </tfoot>
@@ -52,14 +50,12 @@
 
           while ($array = mysqli_fetch_array($busca)) {
             $id_cadastro_cesta = $array['id_cadastro_cesta'];
-            $tamanho = $array['tamanho'];
-            $tipo = $array['tipo'];
+            $nome = $array['nome'];
             $preco = $array['preco'];
         ?>
           <tr>
             <td><?php echo $id_cadastro_cesta?></td>
-            <td><?php echo $tamanho?></td>
-            <td><?php echo $tipo?></td>
+            <td><?php echo $nome?></td>
             <td><?php echo $preco?></td>
           </tr>
           <?php } ?>
