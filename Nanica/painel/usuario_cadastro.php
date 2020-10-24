@@ -12,7 +12,7 @@
           <!-- Page Heading -->
           <h1 class="h3 mb-4 text-gray-800">Cadastro Usuários</h1>
     
-          <form action="cadastro_fornecedor_processa.php" method="post">
+          <form action="usuario_processa.php" method="post">
             <div class="form-group">
             <label for="exampleInputEmail1">Senha</label>
             <input type="text" class="form-control" name="senha" aria-describedby="emailHelp" placeholder="Entre com a senha">
@@ -25,7 +25,7 @@
 
             <div class="form-group">
             <label for="exampleInputEmail1">E-mail</label>
-            <input type="email" class="form-control" name="cnpj" aria-describedby="emailHelp" placeholder="Entre com o e-mail">
+            <input type="email" class="form-control" name="email" aria-describedby="emailHelp" placeholder="Entre com o e-mail">
             </div>
 
             <div class="form-group">
@@ -55,22 +55,26 @@
 
             <div class="form-group">
             <label for="exampleInputEmail1">Celular</label>
-            <input type="text" class="form-control" name="cep" aria-describedby="emailHelp" placeholder="Entre com o celular">
+            <input type="text" class="form-control" name="celular" aria-describedby="emailHelp" placeholder="Entre com o padrão '(99)999999999'">
             </div>
 
             <div class="form-group">
             <label for="exampleInputEmail1">Data de Nascimento</label>
-            <input type="text" class="form-control" name="nascimento" aria-describedby="emailHelp" placeholder="Entre com a data de nascimento">
+            <input type="text" class="form-control" name="nascimento" aria-describedby="emailHelp" placeholder="Entre com o padrão 'AAAA-MM-DD'">
             </div>
 
+            <!--Tipo:
+            <input type="radio" name="adminn" value="1">Cliente
+            <input type="radio" name="adminn" value="2">Admin-->
+
             <div class="form-check">
-            <label class="form-check-label" for="exampleRadios1">Cliente</label>
             <input class="form-check-input" type="radio" name="adminn" value="1">
+            <label class="form-check-label" for="exampleRadios1">Cliente</label>
             </div>
 
             <div class="form-check">
-            <label class="form-check-label" for="exampleRadios2">Admin</label>
             <input class="form-check-input" type="radio" name="adminn" value="2">
+            <label class="form-check-label" for="exampleRadios1">Admin</label>
             </div>
 
                 <button type="submit" class="btn btn-primary">Cadastrar</button>

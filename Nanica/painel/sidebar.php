@@ -83,6 +83,7 @@
             <a class="collapse-item" href="/painel/fornecedores.php">Fornecedores</a>
             <a class="collapse-item" href="/painel/cestas.php">Cestas</a>
             <a class="collapse-item" href="/painel/usuario.php">Usuários</a>
+            <a class="collapse-item" href="/painel/pedidos.php">Pedidos</a>
             <!--<a class="collapse-item" href="utilities-animation.html">Animations</a>
             <a class="collapse-item" href="utilities-other.html">Other</a>-->
           </div>

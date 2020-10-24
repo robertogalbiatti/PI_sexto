@@ -11,12 +11,11 @@
 
 <!-- Page Heading -->
 <h1 class="h3 mb-2 text-gray-800">Pedidos</h1>
-<p class="mb-4">Esta tela mostra os registros de pedidos.</p>
 
 <!-- DataTales Example -->
 <div class="card shadow mb-4">
   <div class="card-header py-3">
-    <h6 class="m-0 font-weight-bold text-primary">Cadastro de Pedidos do Sistema</h6>
+    <h6 class="m-0 font-weight-bold text-primary">Registros de Pedidos do Sistema</h6>
   </div>
   <div class="card-body">
     <div class="table-responsive">
@@ -24,23 +23,23 @@
         <thead>
           <tr>
             <th>Id</th>
-            <th>Itens</th>
+            <th>Items</th>
             <th>Valor Total</th>
             <th>Recorrência</th>
             <th>Frequência</th>
-            <th>Id do usuário</th>
-            <th>Id do entregador</th>
+            <th>Id usuário</th>
+            <th>Id entregador</th>
           </tr>
         </thead>
         <tfoot>
           <tr>
             <th>Id</th>
-            <th>Itens</th>
+            <th>Items</th>
             <th>Valor Total</th>
             <th>Recorrência</th>
             <th>Frequência</th>
-            <th>Id do usuário</th>
-            <th>Id do entregador</th>
+            <th>Id usuário</th>
+            <th>Id entregador</th>
           </tr>
         </tfoot>
         <tbody>
@@ -64,20 +63,16 @@
             $recorrencia = $array['recorrencia'];
             $frequencia = $array['frequencia'];
             $id_usuarios = $array['id_usuarios'];
-            $bairro = $array['bairro'];
-            $cep = $array['cep'];
-            $telefone = $array['telefone'];
+            $id_entregador = $array['id_entregador'];
         ?>
           <tr>
-            <td><?php echo $id_fornecedores?></td>
-            <td><?php echo $razao_social?></td>
-            <td><?php echo $email?></td>
-            <td><?php echo $cnpj?></td>
-            <td><?php echo $endereco?></td>
-            <td><?php echo $num?></td>
-            <td><?php echo $bairro?></td>
-            <td><?php echo $cep?></td>
-            <td><?php echo $telefone?></td>
+            <td><?php echo $id_pedido?></td>
+            <td><?php echo $items?></td>
+            <td><?php echo $valor_total?></td>
+            <td><?php echo $recorrencia?></td>
+            <td><?php echo $frequencia?></td>
+            <td><?php echo $id_usuarios?></td>
+            <td><?php echo $id_entregador?></td>
           </tr>
           <?php } ?>
         </tbody>

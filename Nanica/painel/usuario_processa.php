@@ -24,7 +24,7 @@
     //echo "\nErro de inserção!: " . $sql . "<br>\n" . mysqli_error($conn);
     //}
 
-header('Location: ../painel/usuario_processa.php');
+header('Location: ../painel/usuario_cadastro.php');
 ?>
 <!--<h3> Adicionado com sucesso</h3>-->
 

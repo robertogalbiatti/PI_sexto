@@ -11,7 +11,6 @@
 
 <!-- Page Heading -->
 <h1 class="h3 mb-2 text-gray-800">Usuários</h1>
-<p class="mb-4">Esta tela mostra os registros de usuários</p>
 
 <!-- DataTales Example -->
 <div class="card shadow mb-4">
@@ -31,6 +30,7 @@
             <th>Endereço</th>
             <th>Número</th>
             <th>Bairro</th>
+            <th>CEP</th>
             <th>Celular</th>
             <th>Nascimento</th>
             <th>Admin/Cliente</th>
@@ -46,6 +46,7 @@
             <th>Endereço</th>
             <th>Número</th>
             <th>Bairro</th>
+            <th>CEP</th>
             <th>Celular</th>
             <th>Nascimento</th>
             <th>Admin/Cliente</th>
@@ -80,13 +81,14 @@
             $admin = $array['adminn'];
         ?>
           <tr>
-            <td><?php echo $$id_usuarios?></td>
+            <td><?php echo $id_usuarios?></td>
             <td><?php echo $senha?></td>
             <td><?php echo $nome?></td>
             <td><?php echo $email?></td>
             <td><?php echo $cpf?></td>
             <td><?php echo $endereco?></td>
             <td><?php echo $num?></td>
+            <td><?php echo $bairro?></td>
             <td><?php echo $cep?></td>
             <td><?php echo $celular?></td>
             <td><?php echo $nascimento?></td>
