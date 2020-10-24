@@ -88,6 +88,74 @@
               </div>
             </div>
 
+            <!-- Pedidos realizados -->
+            <div class="col-xl-3 col-md-6 mb-4">
+              <div class="card border-left-warning shadow h-100 py-2">
+                <div class="card-body">
+                  <div class="row no-gutters align-items-center">
+                    <div class="col mr-2">
+                      <div class="text-sm font-weight-bold text-warning text-uppercase mb-1">Pedidos realizados</div>
+                      <?php 
+                      include '../conexao.php';
+                      $servername = "nanica.mysql.dbaas.com.br";
+                      $username = "nanica";
+                      $password = "PTGNanica2020!";
+                      $dbname = "nanica";
+            
+                      $conn = mysqli_connect($servername, $username, $password, $dbname);
+                      $contador1 = 0;
+                      $sql = "SELECT * FROM `pedido`";
+                      $resultado = mysqli_query($conn, $sql);
+                      while ($array = mysqli_fetch_array($resultado)) {
+                        $contador1 = $contador1 +1;
+                      };
+                      //var_dump($resultado["num_rows"]);
+                      //echo $resultado;
+                      ?>
+                      <div class="h5 mb-0 font-weight-bold text-gray-800"><?php echo $contador1; ?></div>
+                    </div>
+                    <div class="col-auto">
+                      <i class="fas fa-shopping-cart fa-2x text-gray-300"></i>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+                        <!-- Clientes cadastrados -->
+                        <div class="col-xl-3 col-md-6 mb-4">
+              <div class="card border-left-info shadow h-100 py-2">
+                <div class="card-body">
+                  <div class="row no-gutters align-items-center">
+                    <div class="col mr-2">
+                      <div class="text-sm font-weight-bold text-info text-uppercase mb-1">Clientes Cadastrados</div>
+                      <?php 
+                      include '../conexao.php';
+                      $servername = "nanica.mysql.dbaas.com.br";
+                      $username = "nanica";
+                      $password = "PTGNanica2020!";
+                      $dbname = "nanica";
+            
+                      $conn = mysqli_connect($servername, $username, $password, $dbname);
+                      $contador1 = 0;
+                      $sql = "SELECT * FROM `usuarios` where adminn=1";
+                      $resultado = mysqli_query($conn, $sql);
+                      while ($array = mysqli_fetch_array($resultado)) {
+                        $contador1 = $contador1 +1;
+                      };
+                      //var_dump($resultado["num_rows"]);
+                      //echo $resultado;
+                      ?>
+                      <div class="h5 mb-0 font-weight-bold text-gray-800"><?php echo $contador1; ?></div>
+                    </div>
+                    <div class="col-auto">
+                      <i class="fas fa-user-circle fa-2x text-gray-300"></i>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
             <!-- Earnings (Monthly) Card Example -->
             <!--<div class="col-xl-3 col-md-6 mb-4">
               <div class="card border-left-info shadow h-100 py-2">

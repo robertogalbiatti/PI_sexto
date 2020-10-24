@@ -54,16 +54,16 @@
 
           $conn = mysqli_connect($servername, $username, $password, $dbname);
           
-          $sql = "SELECT * FROM `fornecedores` ORDER BY id_fornecedores DESC";
+          $sql = "SELECT * FROM `pedido` ORDER BY id_pedido DESC";
           $busca = mysqli_query($conn, $sql);
 
           while ($array = mysqli_fetch_array($busca)) {
-            $id_fornecedores = $array['id_fornecedores'];
-            $razao_social = $array['razao_social'];
-            $email = $array['email'];
-            $cnpj = $array['cnpj'];
-            $endereco = $array['endereco'];
-            $num = $array['num'];
+            $id_pedido = $array['id_pedido'];
+            $items = $array['items'];
+            $valor_total = $array['valor_total'];
+            $recorrencia = $array['recorrencia'];
+            $frequencia = $array['frequencia'];
+            $id_usuarios = $array['id_usuarios'];
             $bairro = $array['bairro'];
             $cep = $array['cep'];
             $telefone = $array['telefone'];
