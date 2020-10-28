@@ -66,6 +66,7 @@
             <a class="collapse-item" href="/painel/cadastro_fornecedor.php">Cadastrar Fornecedor</a>
             <a class="collapse-item" href="/painel/cadastro_cesta.php">Cadastrar Cesta</a>
             <a class="collapse-item" href="/painel/usuario_cadastro.php">Cadastrar Usuário</a>
+            <a class="collapse-item" href="/painel/update_fornecedor.php">Modificar Fornecedor</a>
           </div>
         </div>
       </li>
