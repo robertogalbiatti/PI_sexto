@@ -31,7 +31,7 @@
       <!-- Sidebar - Brand -->
       <a class="sidebar-brand d-flex align-items-center justify-content-center" href="/painel/">
         <div class="sidebar-brand-icon rotate-n-15">
-        <img src="../imagens/Logo-Nanica-Cestas-V2.png" alt="Nanica" width="100" title="Nanica Orgânicos">
+        <img src="../imagens/Logo01.png" alt="Nanica" width="100" title="Nanica Orgânicos">
         </div>
         <div class="sidebar-brand-text mx-3"></div>
       </a>
@@ -58,15 +58,47 @@
       <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
           <i class="fas fa-pencil-alt"></i>
-          <span>Cadastros</span>
+          <span>Cadastrar</span>
         </a>
         <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
             <!--<h6 class="collapse-header">Cadastros</h6>-->
-            <a class="collapse-item" href="/painel/cadastro_fornecedor.php">Cadastrar Fornecedor</a>
-            <a class="collapse-item" href="/painel/cadastro_cesta.php">Cadastrar Cesta</a>
-            <a class="collapse-item" href="/painel/usuario_cadastro.php">Cadastrar Usuário</a>
-            <a class="collapse-item" href="/painel/update_fornecedor.php">Modificar Fornecedor</a>
+            <a class="collapse-item" href="/painel/cadastro_fornecedor.php">Fornecedor</a>
+            <a class="collapse-item" href="/painel/cadastro_cesta.php">Cesta</a>
+            <a class="collapse-item" href="/painel/usuario_cadastro.php">Usuário</a>
+
+          </div>
+        </div>
+      </li>
+
+      <!-- Nav Item - Pages Collapse Menu -->
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+          <i class="fas fa-edit"></i>
+          <span>Modificar</span>
+        </a>
+        <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionSidebar">
+          <div class="bg-white py-2 collapse-inner rounded">
+            <!--<h6 class="collapse-header">Cadastros</h6>-->
+            <a class="collapse-item" href="/painel/update_fornecedor.php">Fornecedor</a>
+            <a class="collapse-item" href="/painel/update_cestas.php">Cesta</a>
+            <a class="collapse-item" href="/painel/update_usuario.php">Usuário</a>
+          </div>
+        </div>
+      </li>
+
+      <!-- Nav Item - Pages Collapse Menu -->
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseThree" aria-expanded="true" aria-controls="collapseThree">
+          <i class="fas fa-trash-alt"></i>
+          <span>Excluir</span>
+        </a>
+        <div id="collapseThree" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+          <div class="bg-white py-2 collapse-inner rounded">
+            <!--<h6 class="collapse-header">Cadastros</h6>-->
+            <a class="collapse-item" href="/painel/delete_fornecedor.php">Fornecedor</a>
+            <a class="collapse-item" href="/painel/delete_cestas.php">Cesta</a>
+            <a class="collapse-item" href="/painel/delete_usuario.php">Usuário</a>
           </div>
         </div>
       </li>
@@ -80,17 +112,16 @@
         <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
             <!--<h6 class="collapse-header">Custom Utilities:</h6>-->
-            <a class="collapse-item" href="/painel/log.php">Logs</a>
             <a class="collapse-item" href="/painel/fornecedores.php">Fornecedores</a>
             <a class="collapse-item" href="/painel/cestas.php">Cestas</a>
             <a class="collapse-item" href="/painel/usuario.php">Usuários</a>
+            <a class="collapse-item" href="/painel/log.php">Logs</a>
             <a class="collapse-item" href="/painel/pedidos.php">Pedidos</a>
             <!--<a class="collapse-item" href="utilities-animation.html">Animations</a>
             <a class="collapse-item" href="utilities-other.html">Other</a>-->
           </div>
         </div>
       </li>
-
       <!-- Divider -->
       <hr class="sidebar-divider">
 
