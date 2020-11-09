@@ -1,5 +1,7 @@
 <?php 
     include '../conexao.php';
+    session_start();
+    
     $id_fornecedores = $_POST['id_fornecedores'];
     $razao_social = $_POST['razaosocial'];
     $email = $_POST['email'];
@@ -9,6 +11,8 @@
     $bairro = $_POST['bairro'];
     $cep = $_POST['cep'];
     $telefone = $_POST['telefone'];
+
+    $nome_usuario = $_SESSION['nome'];
 
     $sql_select = "SELECT razao_social, email, cnpj, endereco, num, bairro, cep, telefone FROM `fornecedores` WHERE id_fornecedores='$id_fornecedores'";
     $busca_select = mysqli_query($conn, $sql_select);
@@ -46,6 +50,17 @@
 
     $sql = "UPDATE fornecedores SET razao_social='$razao_social', email='$email', cnpj='$cnpj', endereco='$endereco', num='$num', bairro='$bairro', cep='$cep', telefone='$telefone' where id_fornecedores='$id_fornecedores' ";
     $update = mysqli_query($conn, $sql);
+
+    $log = "INSERT INTO `log` () VALUES (NULL, '$nome_usuario', 'Fornecedor modificado!', now())"; 
+    $insert_log = mysqli_query($conn, $log);
+
+    if($update){
+        echo '<script> alert("Fornecedor atualizado!")</script>';
+        echo '<script>window.location.href = "/painel/update_fornecedor.php";</script>';
+    } else {
+        echo '<script> alert("Fornecedor não atualizado!")</script>';
+        echo '<script>window.location.href = "/painel/update_fornecedor.php";</script>'; 
+    }
     //echo var_dump($razao_social);
     
 
@@ -55,7 +70,7 @@
     //echo "\nErro de inserção!: " . $sql . "<br>\n" . mysqli_error($conn);
     //}
 
-header('Location: ../painel/update_fornecedor.php');
+//header('Location: ../painel/update_fornecedor.php');
 ?>
 <!--<h3> Adicionado com sucesso</h3>-->
 

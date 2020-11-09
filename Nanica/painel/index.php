@@ -1,4 +1,5 @@
-<?php include 'sidebar.php'?>
+<?php include 'sidebar.php';
+include '../conexao.php';?>
 
     <!-- End of Sidebar -->
 
@@ -11,10 +12,10 @@
 
           <!-- Page Heading -->
           <!-- Page Heading -->
-          <div class="d-sm-flex align-items-center justify-content-between mb-4">
+          <!--<div class="d-sm-flex align-items-center justify-content-between mb-4">
             <h1 class="h3 mb-0 text-gray-800">Painel</h1>
             <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i class="fas fa-download fa-sm text-white-50"></i> Gerar Relatório</a>
-          </div>
+          </div>-->
 
           <!-- Content Row -->
           <div class="row">
@@ -28,13 +29,8 @@
                       <div class="text-sm font-weight-bold text-primary text-uppercase mb-1">Fornecedores Cadastrados</div>
 
                       <?php 
-                      include '../conexao.php';
-                      $servername = "nanica.mysql.dbaas.com.br";
-                      $username = "nanica";
-                      $password = "PTGNanica2020!";
-                      $dbname = "nanica";
-            
-                      $conn = mysqli_connect($servername, $username, $password, $dbname);
+                    
+                      
                       $contador = 0;
                       $sql = "SELECT * FROM `fornecedores`";
                       $resultado = mysqli_query($conn, $sql);
@@ -63,16 +59,11 @@
                       <div class="text-sm font-weight-bold text-success text-uppercase mb-1">Cestas Cadastradas</div>
                       <?php 
                       include '../conexao.php';
-                      $servername = "nanica.mysql.dbaas.com.br";
-                      $username = "nanica";
-                      $password = "PTGNanica2020!";
-                      $dbname = "nanica";
-            
-                      $conn = mysqli_connect($servername, $username, $password, $dbname);
+
                       $contador1 = 0;
-                      $sql = "SELECT * FROM `cadastro_cesta`";
-                      $resultado = mysqli_query($conn, $sql);
-                      while ($array = mysqli_fetch_array($resultado)) {
+                      $sql1 = "SELECT * FROM `cadastro_cesta`";
+                      $resultado1 = mysqli_query($conn, $sql1);
+                      while ($array1 = mysqli_fetch_array($resultado1)) {
                         $contador1 = $contador1 +1;
                       };
                       //var_dump($resultado["num_rows"]);
@@ -97,22 +88,18 @@
                       <div class="text-sm font-weight-bold text-warning text-uppercase mb-1">Pedidos realizados</div>
                       <?php 
                       include '../conexao.php';
-                      $servername = "nanica.mysql.dbaas.com.br";
-                      $username = "nanica";
-                      $password = "PTGNanica2020!";
-                      $dbname = "nanica";
             
-                      $conn = mysqli_connect($servername, $username, $password, $dbname);
-                      $contador1 = 0;
-                      $sql = "SELECT * FROM `pedido`";
-                      $resultado = mysqli_query($conn, $sql);
-                      while ($array = mysqli_fetch_array($resultado)) {
-                        $contador1 = $contador1 +1;
+                      $contador2 = 0;
+                      //$sql2 = "SELECT * FROM `pedido`";
+                      $sql2= "SELECT distinct id_pedido, count(numero_pedido) from pedido group by numero_pedido";
+                      $resultado2 = mysqli_query($conn, $sql2);
+                      while ($array2 = mysqli_fetch_array($resultado2)) {
+                        $contador2 = $contador2 +1;
                       };
                       //var_dump($resultado["num_rows"]);
                       //echo $resultado;
                       ?>
-                      <div class="h5 mb-0 font-weight-bold text-gray-800"><?php echo $contador1; ?></div>
+                      <div class="h5 mb-0 font-weight-bold text-gray-800"><?php echo $contador2; ?></div>
                     </div>
                     <div class="col-auto">
                       <i class="fas fa-shopping-cart fa-2x text-gray-300"></i>
@@ -122,31 +109,32 @@
               </div>
             </div>
 
-                        <!-- Clientes cadastrados -->
-                        <div class="col-xl-3 col-md-6 mb-4">
+            <!-- Clientes cadastrados -->
+              <div class="col-xl-3 col-md-6 mb-4">
               <div class="card border-left-info shadow h-100 py-2">
                 <div class="card-body">
                   <div class="row no-gutters align-items-center">
                     <div class="col mr-2">
                       <div class="text-sm font-weight-bold text-info text-uppercase mb-1">Clientes Cadastrados</div>
                       <?php 
-                      include '../conexao.php';
-                      $servername = "nanica.mysql.dbaas.com.br";
-                      $username = "nanica";
-                      $password = "PTGNanica2020!";
-                      $dbname = "nanica";
             
-                      $conn = mysqli_connect($servername, $username, $password, $dbname);
-                      $contador1 = 0;
-                      $sql = "SELECT * FROM `usuarios` where adminn=1";
-                      $resultado = mysqli_query($conn, $sql);
-                      while ($array = mysqli_fetch_array($resultado)) {
-                        $contador1 = $contador1 +1;
+                      $contador3 = 0;
+                      $sql3 = "SELECT * FROM `usuarios` where adminn=1";
+                      $resultado3 = mysqli_query($conn, $sql3);
+                      while ($array3 = mysqli_fetch_array($resultado3)) {
+                        $contador3 = $contador3 +1;
+                      };
+
+                      $contador4 = 0;
+                      $sql4 = "SELECT * FROM `usuarios` where adminn=2";
+                      $resultado4 = mysqli_query($conn, $sql4);
+                      while ($array4 = mysqli_fetch_array($resultado4)) {
+                        $contador4 = $contador4 +1;
                       };
                       //var_dump($resultado["num_rows"]);
                       //echo $resultado;
                       ?>
-                      <div class="h5 mb-0 font-weight-bold text-gray-800"><?php echo $contador1; ?></div>
+                      <div class="h5 mb-0 font-weight-bold text-gray-800"><?php echo $contador3; ?></div>
                     </div>
                     <div class="col-auto">
                       <i class="fas fa-user-circle fa-2x text-gray-300"></i>
@@ -156,49 +144,130 @@
               </div>
             </div>
 
-            <!-- Earnings (Monthly) Card Example -->
-            <!--<div class="col-xl-3 col-md-6 mb-4">
-              <div class="card border-left-info shadow h-100 py-2">
-                <div class="card-body">
-                  <div class="row no-gutters align-items-center">
-                    <div class="col mr-2">
-                      <div class="text-xs font-weight-bold text-info text-uppercase mb-1">Tasks</div>
-                      <div class="row no-gutters align-items-center">
-                        <div class="col-auto">
-                          <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">50%</div>
-                        </div>
-                        <div class="col">
-                          <div class="progress progress-sm mr-2">
-                            <div class="progress-bar bg-info" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="col-auto">
-                      <i class="fas fa-clipboard-list fa-2x text-gray-300"></i>
-                    </div>
+            
+
+          <div class="row">
+
+            <!-- Area Chart -->
+            <div class="col-xl-9 col-lg-8">
+              <div class="card shadow mb-4">
+                <!-- Card Header - Dropdown -->
+                <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                  <h6 class="m-0 font-weight-bold text-primary">Tipos de Usuários/Fornecedores Cadastrados</h6>
+                  <div class="dropdown no-arrow">
+                    <!--<a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      <i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in" aria-labelledby="dropdownMenuLink">
+                      <div class="dropdown-header">Dropdown Header:</div>
+                      <a class="dropdown-item" href="#">Action</a>
+                      <a class="dropdown-item" href="#">Another action</a>
+                      <div class="dropdown-divider"></div>
+                      <a class="dropdown-item" href="#">Something else here</a>
+                    </div>-->
                   </div>
                 </div>
-              </div>
-            </div>-->
-
-            <!-- Pending Requests Card Example -->
-            <!--<div class="col-xl-3 col-md-6 mb-4">
-              <div class="card border-left-warning shadow h-100 py-2">
+                <!-- Card Body -->
                 <div class="card-body">
-                  <div class="row no-gutters align-items-center">
-                    <div class="col mr-2">
-                      <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">Pending Requests</div>
-                      <div class="h5 mb-0 font-weight-bold text-gray-800">18</div>
-                    </div>
-                    <div class="col-auto">
-                      <i class="fas fa-comments fa-2x text-gray-300"></i>
-                    </div>
+                  <div class="chart-area">
+                    <!-- Começo Google Chats-->
+                 
+                       <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+                       <script type="text/javascript">
+                          google.charts.load('current', {'packages':['corechart']});
+                          google.charts.setOnLoadCallback(drawChart);
+
+                          function drawChart() {
+
+                          var data = google.visualization.arrayToDataTable([
+                          ['Task', 'Usuários'],
+                          ['Clientes', <?php echo $contador3 ?>],
+                          ['Administradores',<?php echo $contador4 ?>],
+                          ['Fornecedores',<?php echo $contador ?>],
+                          ]);
+
+                          var options = {
+                            title: 'Tipos de Usuários/Fornecedores'
+                          };
+
+                          var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+
+                          chart.draw(data, options);
+                         }
+                        </script>
+                          <body>
+                            <div id="piechart" style="width: 700px; height: 300px;"></div>
+                          </body>
+
+                    <!--Fim Google Charts-->
                   </div>
                 </div>
               </div>
             </div>
-          </div>-->
+<!--
+             Pie Chart 
+            <div class="col-xl-9 col-lg-8">
+              <div class="card shadow mb-4">
+                 Card Header - Dropdown 
+                <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                  <h6 class="m-0 font-weight-bold text-primary">Quantidade de Pedidos</h6>
+                  <div class="dropdown no-arrow">
+                    <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      <i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in" aria-labelledby="dropdownMenuLink">
+                      <div class="dropdown-header">Dropdown Header:</div>
+                      <a class="dropdown-item" href="#">Action</a>
+                      <a class="dropdown-item" href="#">Another action</a>
+                      <div class="dropdown-divider"></div>
+                      <a class="dropdown-item" href="#">Something else here</a>
+                    </div>
+                  </div>
+                </div>
+                 Card Body 
+                <div class="card-body">
+                  <div class="chart-pie pt-4 pb-2">
+                    <canvas id="myPieChart"></canvas>
+                  </div>
+                  <html>
+                    <head>
+                      <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+                      <script type="text/javascript">
+                        //google.charts.load('current', {'packages':['corechart']});
+                        google.charts.setOnLoadCallback(drawChart);
+
+                        //function drawChart() {
+                          //var data = google.visualization.arrayToDataTable([
+                           //['Mês', 'Pedidos', 'Clientes'],
+                            //['Jun',  2, 1],
+                           // ['Jul',  1, 5],
+                           // ['Set',  2, 6],
+                            //['Out',  5, 6],
+                            //['Nov',  6, 7],
+                            //['Dez',  5, 8]
+
+                          //]);
+
+                          //var options = {
+                           // title: 'Pedidos x Clientes',
+                            //curveType: 'function',
+                            //legend: { position: 'bottom' }
+                         // };
+
+                          //var chart = new google.visualization.LineChart(document.getElementById('curve_chart'));
+
+                          //chart.draw(data, options);
+                        //}
+                      </script>
+                    </head>
+                  <body>
+                    <div id="curve_chart" style="width: 700px; height: 500px"></div>
+                  </body>
+                  </html>
+                </div>
+              </div>
+            </div>-->
+          </div>
 
         </div>
         <!-- /.container-fluid -->

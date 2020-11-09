@@ -1,13 +1,26 @@
+<?php
+  session_start();
+//var_dump($_SESSION['adminn']);
+  if ($_SESSION['adminn'] != 2) {
+    echo '<script>window.location.href = "login.php";</script>';
+  } 
+
+  if (!isset($_SESSION['login'])) {
+    echo '<script>window.location.href = "login.php";</script>';
+  } 
+ 
+?>
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="pt_BR">
 <head>
-
+  <?php header("Content-type: text/html; charset=utf-8"); ?>
   <meta charset="utf-8">
+  <meta property="og:locale" content="pt_BR">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="">
   <meta name="author" content="">
+
 
   <title>Nanica</title>
 
@@ -83,6 +96,7 @@
             <a class="collapse-item" href="/painel/update_fornecedor.php">Fornecedor</a>
             <a class="collapse-item" href="/painel/update_cestas.php">Cesta</a>
             <a class="collapse-item" href="/painel/update_usuario.php">Usuário</a>
+            <a class="collapse-item" href="/painel/status_pedido.php">Status do Pedido</a>
           </div>
         </div>
       </li>

@@ -61,7 +61,7 @@
           $password = "PTGNanica2020!";
           $dbname = "nanica";
 
-          $conn = mysqli_connect($servername, $username, $password, $dbname);
+
           
           $sql = "SELECT * FROM `usuarios` ORDER BY id_usuarios DESC";
           $busca = mysqli_query($conn, $sql);

@@ -54,8 +54,6 @@
           $username = "nanica";
           $password = "PTGNanica2020!";
           $dbname = "nanica";
-
-          $conn = mysqli_connect($servername, $username, $password, $dbname);
           
           $sql = "SELECT * FROM `fornecedores` ORDER BY id_fornecedores DESC";
           $busca = mysqli_query($conn, $sql);

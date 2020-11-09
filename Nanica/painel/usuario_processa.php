@@ -1,5 +1,7 @@
 <?php 
     include '../conexao.php';
+    session_start();
+
     $id_usuarios = $_POST['id_usuarios'];
     $senha = $_POST['senha'];
     $nome = $_POST['nome'];
@@ -13,10 +15,22 @@
     $nascimento = $_POST['nascimento'];
     $admin = $_POST['adminn'];
 
+    $nome_usuario = $_SESSION['nome'];
+
     $sql = "INSERT INTO usuarios (id_usuarios, senha, nome, email, cpf, endereco, num, bairro, cep, celular, nascimento, adminn) VALUES (null, '$senha','$nome','$email','$cpf','$endereco','$num','$bairro','$cep','$celular','$nascimento','$admin')";
     $inserir = mysqli_query($conn, $sql);
+
+    $log = "INSERT INTO `log` () VALUES (NULL, '$nome_usuario', 'Usuário cadastrado!', now())"; 
+    $insert_log = mysqli_query($conn, $log);
     //echo var_dump($razao_social);
-    
+
+    if($inserir){
+      echo '<script> alert("Usuário cadastrado!")</script>';
+      echo '<script>window.location.href = "/painel/usuario_cadastro.php";</script>';
+    } else {
+    echo '<script> alert("Usuário não cadastrado!")</script>';
+    echo '<script>window.location.href = "/painel/usuario_cadastro.php";</script>'; 
+    }
 
 //if (mysqli_query($conn, $sql)) {
   //  echo "\nInserido no banco com sucesso rapaiz!\n";
@@ -24,7 +38,7 @@
     //echo "\nErro de inserção!: " . $sql . "<br>\n" . mysqli_error($conn);
     //}
 
-header('Location: ../painel/usuario_cadastro.php');
+//header('Location: ../painel/usuario_cadastro.php');
 ?>
 <!--<h3> Adicionado com sucesso</h3>-->
 

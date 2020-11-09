@@ -23,43 +23,43 @@
         <thead>
           <tr>
             <th>Id</th>
-            <th>Items</th>
-            <th>Valor Total</th>
+            <th>Número do Pedido</th>
+            <th>Id da cesta</th>
+            <th>Quantidade</th>
+            <th>Sub Total</th>
             <th>Recorrência</th>
             <th>Frequência</th>
-            <th>Id usuário</th>
-            <th>Id entregador</th>
+            <th>Id do cliente</th>
+            <th>Id do entregador</th>
           </tr>
         </thead>
         <tfoot>
           <tr>
             <th>Id</th>
-            <th>Items</th>
-            <th>Valor Total</th>
+            <th>Número do Pedido</th>
+            <th>Id da cesta</th>
+            <th>Quantidade</th>
+            <th>Sub Total</th>
             <th>Recorrência</th>
             <th>Frequência</th>
-            <th>Id usuário</th>
-            <th>Id entregador</th>
+            <th>Id do cliente</th>
+            <th>Id do entregador</th>
           </tr>
         </tfoot>
         <tbody>
 
         <?php
           include '../conexao.php';
-          $servername = "nanica.mysql.dbaas.com.br";
-          $username = "nanica";
-          $password = "PTGNanica2020!";
-          $dbname = "nanica";
-
-          $conn = mysqli_connect($servername, $username, $password, $dbname);
           
           $sql = "SELECT * FROM `pedido` ORDER BY id_pedido DESC";
           $busca = mysqli_query($conn, $sql);
 
           while ($array = mysqli_fetch_array($busca)) {
             $id_pedido = $array['id_pedido'];
-            $items = $array['items'];
-            $valor_total = $array['valor_total'];
+            $numero_pedido = $array['numero_pedido'];
+            $id_cadastro_cesta = $array['id_cadastro_cesta'];
+            $quantidade = $array['quantidade'];
+            $subtotal = $array['subtotal'];
             $recorrencia = $array['recorrencia'];
             $frequencia = $array['frequencia'];
             $id_usuarios = $array['id_usuarios'];
@@ -67,8 +67,10 @@
         ?>
           <tr>
             <td><?php echo $id_pedido?></td>
-            <td><?php echo $items?></td>
-            <td><?php echo $valor_total?></td>
+            <td><?php echo $numero_pedido?></td>
+            <td><?php echo $id_cadastro_cesta?></td>
+            <td><?php echo $quantidade?></td>
+            <td><?php echo $subtotal?></td>
             <td><?php echo $recorrencia?></td>
             <td><?php echo $frequencia?></td>
             <td><?php echo $id_usuarios?></td>

@@ -22,16 +22,16 @@
       <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
         <thead>
           <tr>
-            <th>Id</th>
-            <th>Usuário</th>
+            <th>Id do Log</th>
+            <th>Responsável pela Ação</th>
             <th>Ação</th>
             <th>Data da Ação</th>
           </tr>
         </thead>
         <tfoot>
           <tr>
-            <th>Id</th>
-            <th>Usuário</th>
+            <th>Id do Log</th>
+            <th>Responsável pela Ação</th>
             <th>Ação</th>
             <th>Data da Ação</th>
           </tr>
@@ -40,26 +40,20 @@
 
         <?php
           include '../conexao.php';
-          $servername = "nanica.mysql.dbaas.com.br";
-          $username = "nanica";
-          $password = "PTGNanica2020!";
-          $dbname = "nanica";
-
-          $conn = mysqli_connect($servername, $username, $password, $dbname);
           
           $sql = "SELECT * FROM `log` ORDER BY id_log DESC ";
           $busca = mysqli_query($conn, $sql);
 
           while ($array = mysqli_fetch_array($busca)) {
             $id_log = $array['id_log'];
-            $usuario = $array['id_usuario'];
+            $nome = $array['nome'];
             $acao = $array['acao'];
             $data = $array['data_acao'];
         ?>
 
           <tr>
             <td><?php echo $id_log?></td>
-            <td><?php echo $usuario?></td>
+            <td><?php echo $nome?></td>
             <td><?php echo $acao?></td>
             <td><?php echo $data?></td>
           </tr>

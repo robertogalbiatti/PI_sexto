@@ -16,7 +16,26 @@
 
             <div class="form-group">
             <label for="exampleInputEmail1">Nome</label>
-            <input type="text" class="form-control" name="tipo" aria-describedby="emailHelp" placeholder="Entre com o nome da cesta">
+            <input type="text" class="form-control" name="name" aria-describedby="emailHelp" placeholder="Entre com o nome da cesta">
+            </div>
+
+            <div class="form-group">
+            <label for="exampleInputEmail1">Descrição</label>
+            <input type="text" class="form-control" name="descricao" aria-describedby="emailHelp" placeholder="Entre com a descrição">
+            </div>
+            
+            Tipo:       
+            <div class="form-check">
+            <input type="radio" name="tipo" value="1"> Frutas<br>
+            <input type="radio" name="tipo" value="2"> Legumes/Verduras<br>
+            <input type="radio" name="tipo" value="3"> Mixed
+            </div>
+
+            Tamanho:       
+            <div class="form-check">
+            <input type="radio" name="tamanho" value="1"> Pequeno<br>
+            <input type="radio" name="tamanho" value="2"> Médio<br>
+            <input type="radio" name="tamanho" value="3"> Grande
             </div>
 
             <div class="form-group">
