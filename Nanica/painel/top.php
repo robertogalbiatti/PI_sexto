@@ -49,31 +49,25 @@
 
             <!-- Nav Item - Alerts -->
             <?php 
-            //include '../conexao.php';
-            
-            //$sql = "SELECT * FROM `pedidos` WHERE vizualizado = '0' ";
-            //$busca = mysqli_query($conn, $sql);
-            //$contador = 0;
-            //$array = mysqli_fetch_array($busca);
-            //if ($array) {
-             // while ($array) {
-               // $contador = $contador + 1;
-             // }
-            //} else {
-             // $contador = 0;
-           // }
-
-          //?>
+            include '../conexao.php';
+            $sql2 = "SELECT * FROM pedido_status WHERE pedido_status = '1'";
+            //$sql2= "SELECT distinct id_pedido, count(pedido_status) from pedido_status WHERE pedido_status = '1' group by pedido_status";
+            $resultado2 = mysqli_query($conn, $sql2);
+            while ($array2 = mysqli_fetch_array($resultado2)) {
+              $contador2 = $contador2 +1;
+            };
+            ?>
             
             <li class="nav-item dropdown no-arrow mx-1">
               <a class="nav-link dropdown-toggle" href="#" id="alertsDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <i class="fas fa-bell fa-fw"></i>
                 <!-- Counter - Alerts -->
                 <span class="badge badge-danger badge-counter"><?php
-                if ($contador == 0) {
+                
+                if ($contador2 == 0) {
                   echo '';
                 } else {
-                  echo $contador;
+                  echo $contador2;
                 }
                 
                 ?></span>
@@ -81,20 +75,20 @@
               <!-- Dropdown - Alerts -->
               <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="alertsDropdown">
                 <h6 class="dropdown-header">
-                  Alerts Center
+                  Status dos Pedidos
                 </h6>
-                <a class="dropdown-item d-flex align-items-center" href="#">
+                <a class="dropdown-item d-flex align-items-center" href="/painel/pedidos.php">
                   <div class="mr-3">
                     <div class="icon-circle bg-primary">
                       <i class="fas fa-file-alt text-white"></i>
                     </div>
                   </div>
                   <div>
-                    <div class="small text-gray-500">December 12, 2019</div>
-                    <span class="font-weight-bold">A new monthly report is ready to download!</span>
+                    <div class="small text-gray-500">Novos pedidos!</div>
+                    <span class="font-weight-bold"><?php echo "Há $contador2 pedidos novos" ?></span>
                   </div>
                 </a>
-                <a class="dropdown-item d-flex align-items-center" href="#">
+                <!--<a class="dropdown-item d-flex align-items-center" href="/painel/pedidos.php">
                   <div class="mr-3">
                     <div class="icon-circle bg-success">
                       <i class="fas fa-donate text-white"></i>
@@ -116,7 +110,7 @@
                     Spending Alert: We've noticed unusually high spending for your account.
                   </div>
                 </a>
-                <a class="dropdown-item text-center small text-gray-500" href="#">Show All Alerts</a>
+                <a class="dropdown-item text-center small text-gray-500" href="#">Show All Alerts</a>-->
               </div>
             </li>
 

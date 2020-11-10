@@ -8,7 +8,7 @@ var_dump($id_cliente);
 if (isset($_SESSION['cliente'])) {
   include '../conexao.php';
 
-          $sql = "SELECT * FROM `usuarios` WHERE id_usuarios = `$id_cliente` ";
+          $sql = "SELECT * FROM `usuarios` WHERE id_usuarios = '$id_cliente' ";
           $busca = mysqli_query($conn, $sql);
 
           while ($array = mysqli_fetch_array($busca)) {

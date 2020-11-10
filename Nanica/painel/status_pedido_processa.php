@@ -16,9 +16,9 @@
       $pedido_status_select = $array['pedido_status'];
       $id_pedido_select = $array['id_pedido'];
     }
-    var_dump($id_pedido_status_select);
-    var_dump($pedido_status_select);
-    var_dump($id_pedido_selec);
+    //var_dump($id_pedido_status_select);
+    //var_dump($pedido_status_select);
+    //var_dump($id_pedido_selec);
 
     if  ($pedido_status == null) {
         $pedido_status = $pedido_status_select;

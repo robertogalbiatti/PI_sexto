@@ -281,16 +281,16 @@ input[type=text]:placeholder {
 
     <!-- Login Form -->
     <form action="login_processa.php" method="post">
-      <input type="text" id="login" class="fadeIn second" name="email" placeholder="email">
-      <input type="text" id="password" class="fadeIn third" name="senha" placeholder="senha">
+      <input type="email" id="login" class="fadeIn second" name="email" placeholder="email"><br><br>
+      <input type="password" id="password" class="fadeIn third" name="senha" placeholder="senha"><br><br>
       <input type="submit" class="fadeIn fourth"  name="logar" value="Logar">
     </form>
 
     <!-- Remind Passowrd -->
-    <div id="formFooter">
+    <!--<div id="formFooter">
       <a class="underlineHover" href="#">Esqueceu a senha?</a>
       <a class="underlineHover" href="/cadastro_usuario.php">Cadastre-se</a>
-    </div>
+    </div>-->
 
   </div>
 </div>

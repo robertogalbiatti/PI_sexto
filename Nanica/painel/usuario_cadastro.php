@@ -15,52 +15,52 @@
           <form action="usuario_processa.php" method="post">
             <div class="form-group">
             <label for="exampleInputEmail1">Senha</label>
-            <input type="text" class="form-control" name="senha" aria-describedby="emailHelp" placeholder="Entre com a senha">
+            <input type="text" class="form-control" name="senha" aria-describedby="emailHelp" placeholder="Entre com a senha" required>
             </div>
 
             <div class="form-group">
             <label for="exampleInputEmail1">Nome</label>
-            <input type="text" class="form-control" name="nome" aria-describedby="emailHelp" placeholder="Entre com o nome">
+            <input type="text" class="form-control" name="nome" aria-describedby="emailHelp" placeholder="Entre com o nome" required>
             </div>
 
             <div class="form-group">
             <label for="exampleInputEmail1">E-mail</label>
-            <input type="email" class="form-control" name="email" aria-describedby="emailHelp" placeholder="Entre com o e-mail">
+            <input type="email" class="form-control" name="email" aria-describedby="emailHelp" placeholder="Entre com o e-mail" required>
             </div>
 
             <div class="form-group">
             <label for="exampleInputEmail1">CPF</label>
-            <input type="text" class="form-control" name="cpf" aria-describedby="emailHelp" placeholder="Entre com o CPF">
+            <input type="text" class="form-control" name="cpf" aria-describedby="emailHelp" placeholder="Entre com o CPF" required>
             </div>
 
             <div class="form-group">
             <label for="exampleInputEmail1">Endereço</label>
-            <input type="text" class="form-control" name="endereco" aria-describedby="emailHelp" placeholder="Entre com o endereço">
+            <input type="text" class="form-control" name="endereco" aria-describedby="emailHelp" placeholder="Entre com o endereço" required>
             </div>
 
             <div class="form-group">
             <label for="exampleInputEmail1">Número</label>
-            <input type="text" class="form-control" name="num" aria-describedby="emailHelp" placeholder="Entre com o número">
+            <input type="text" class="form-control" name="num" aria-describedby="emailHelp" placeholder="Entre com o número" required>
             </div>
 
             <div class="form-group">
             <label for="exampleInputEmail1">Bairro</label>
-            <input type="text" class="form-control" name="bairro" aria-describedby="emailHelp" placeholder="Entre com o bairro">
+            <input type="text" class="form-control" name="bairro" aria-describedby="emailHelp" placeholder="Entre com o bairro" required>
             </div>
 
             <div class="form-group">
             <label for="exampleInputEmail1">CEP</label>
-            <input type="text" class="form-control" name="cep" aria-describedby="emailHelp" placeholder="Entre com o CEP">
+            <input type="text" class="form-control" name="cep" aria-describedby="emailHelp" placeholder="Entre com o CEP" required>
             </div>
 
             <div class="form-group">
             <label for="exampleInputEmail1">Celular</label>
-            <input type="text" class="form-control" name="celular" aria-describedby="emailHelp" placeholder="Entre com o padrão '(99)999999999'">
+            <input type="text" class="form-control" name="celular" aria-describedby="emailHelp" placeholder="Entre com o padrão '(99)999999999'" required>
             </div>
 
             <div class="form-group">
             <label for="exampleInputEmail1">Data de Nascimento</label>
-            <input type="text" class="form-control" name="nascimento" aria-describedby="emailHelp" placeholder="Entre com o padrão 'AAAA-MM-DD'">
+            <input type="text" class="form-control" name="nascimento" aria-describedby="emailHelp" placeholder="Entre com o padrão 'AAAA-MM-DD'" required>
             </div>
 
             <!--Tipo:
@@ -68,7 +68,7 @@
             <input type="radio" name="adminn" value="2">Admin-->
 
             <div class="form-check">
-            <input class="form-check-input" type="radio" name="adminn" value="1">
+            <input class="form-check-input" type="radio" name="adminn" value="1" checked>
             <label class="form-check-label" for="exampleRadios1">Cliente</label>
             </div>
 

@@ -16,9 +16,20 @@
     $admin = $_POST['adminn'];
 
     $nome_usuario = $_SESSION['nome'];
+    
+    $login = mysqli_query($conn, "SELECT * FROM `usuarios` WHERE email = '$email'");
+
+    while ($array = mysqli_fetch_array($login)) {
+    $email_select = $array['email'];
+    }
+    if ($email == $email_select) {
+      echo '<script> alert("Usuário já cadastrado!")</script>';
+      echo '<script>window.location.href = "/painel/index.php";</script>'; 
+    }
 
     $sql = "INSERT INTO usuarios (id_usuarios, senha, nome, email, cpf, endereco, num, bairro, cep, celular, nascimento, adminn) VALUES (null, '$senha','$nome','$email','$cpf','$endereco','$num','$bairro','$cep','$celular','$nascimento','$admin')";
     $inserir = mysqli_query($conn, $sql);
+
 
     $log = "INSERT INTO `log` () VALUES (NULL, '$nome_usuario', 'Usuário cadastrado!', now())"; 
     $insert_log = mysqli_query($conn, $log);

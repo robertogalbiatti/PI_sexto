@@ -16,31 +16,31 @@
 
             <div class="form-group">
             <label for="exampleInputEmail1">Nome</label>
-            <input type="text" class="form-control" name="name" aria-describedby="emailHelp" placeholder="Entre com o nome da cesta">
+            <input type="text" class="form-control" name="name" aria-describedby="emailHelp" placeholder="Entre com o nome da cesta" required>
             </div>
 
             <div class="form-group">
             <label for="exampleInputEmail1">Descrição</label>
-            <input type="text" class="form-control" name="descricao" aria-describedby="emailHelp" placeholder="Entre com a descrição">
+            <input type="text" class="form-control" name="descricao" aria-describedby="emailHelp" placeholder="Entre com a descrição" required>
             </div>
             
             Tipo:       
             <div class="form-check">
-            <input type="radio" name="tipo" value="1"> Frutas<br>
+            <input type="radio" name="tipo" value="1" checked> Frutas<br>
             <input type="radio" name="tipo" value="2"> Legumes/Verduras<br>
             <input type="radio" name="tipo" value="3"> Mixed
             </div>
 
             Tamanho:       
             <div class="form-check">
-            <input type="radio" name="tamanho" value="1"> Pequeno<br>
+            <input type="radio" name="tamanho" value="1" checked> Pequeno<br>
             <input type="radio" name="tamanho" value="2"> Médio<br>
             <input type="radio" name="tamanho" value="3"> Grande
             </div>
 
             <div class="form-group">
             <label for="exampleInputEmail1">Preço</label>
-            <input type="text" class="form-control" name="preco" aria-describedby="emailHelp" placeholder="Entre com o preço">
+            <input type="text" class="form-control" name="preco" aria-describedby="emailHelp" placeholder="Entre com o preço" required>
             </div>
 
                 <button type="submit" class="btn btn-primary">Cadastrar</button>

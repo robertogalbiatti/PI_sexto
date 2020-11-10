@@ -15,42 +15,42 @@
           <form action="cadastro_fornecedor_processa.php" method="post">
             <div class="form-group">
             <label for="exampleInputEmail1">Razão Social</label>
-            <input type="text" class="form-control" name="razaosocial" aria-describedby="emailHelp" placeholder="Entre com a razão social">
+            <input type="text" class="form-control" name="razaosocial" aria-describedby="emailHelp" placeholder="Entre com a razão social" required>
             </div>
 
             <div class="form-group">
             <label for="exampleInputEmail1">Email</label>
-            <input type="email" class="form-control" name="email" aria-describedby="emailHelp" placeholder="Entre com o e-mail">
+            <input type="email" class="form-control" name="email" aria-describedby="emailHelp" placeholder="Entre com o e-mail" required>
             </div>
 
             <div class="form-group">
             <label for="exampleInputEmail1">CNPJ</label>
-            <input type="text" class="form-control" name="cnpj" aria-describedby="emailHelp" placeholder="Entre com o CNPJ">
+            <input type="text" class="form-control" name="cnpj" aria-describedby="emailHelp" placeholder="Entre com o CNPJ" required>
             </div>
 
             <div class="form-group">
             <label for="exampleInputEmail1">Endereço</label>
-            <input type="text" class="form-control" name="endereco" aria-describedby="emailHelp" placeholder="Entre com o endereço">
+            <input type="text" class="form-control" name="endereco" aria-describedby="emailHelp" placeholder="Entre com o endereço" required>
             </div>
 
             <div class="form-group">
             <label for="exampleInputEmail1">Num</label>
-            <input type="text" class="form-control" name="num" aria-describedby="emailHelp" placeholder="Entre com o número">
+            <input type="text" class="form-control" name="num" aria-describedby="emailHelp" placeholder="Entre com o número" required>
             </div>
 
             <div class="form-group">
             <label for="exampleInputEmail1">Bairro</label>
-            <input type="text" class="form-control" name="bairro" aria-describedby="emailHelp" placeholder="Entre com o bairro">
+            <input type="text" class="form-control" name="bairro" aria-describedby="emailHelp" placeholder="Entre com o bairro" required>
             </div>
 
             <div class="form-group">
             <label for="exampleInputEmail1">CEP</label>
-            <input type="text" class="form-control" name="cep" aria-describedby="emailHelp" placeholder="Entre com o CEP">
+            <input type="text" class="form-control" name="cep" aria-describedby="emailHelp" placeholder="Entre com o CEP" required>
             </div>
 
             <div class="form-group">
             <label for="exampleInputEmail1">Telefone</label>
-            <input type="text" class="form-control" name="telefone" aria-describedby="emailHelp" placeholder="Entre com o telefone">
+            <input type="text" class="form-control" name="telefone" aria-describedby="emailHelp" placeholder="Entre com o telefone" required>
             </div>
 
                 <button type="submit" class="btn btn-primary">Cadastrar</button>

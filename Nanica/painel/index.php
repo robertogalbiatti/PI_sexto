@@ -88,7 +88,45 @@ include '../conexao.php';?>
                       <div class="text-sm font-weight-bold text-warning text-uppercase mb-1">Pedidos realizados</div>
                       <?php 
                       include '../conexao.php';
-            
+                      $contador_status1 = 0;
+                      $contador_status2 = 0;
+                      $contador_status3 = 0;
+                      $contador_status4 = 0;
+                      $contador_status5 = 0;
+
+                      $sql_status1 = "SELECT * FROM pedido_status WHERE pedido_status = '1'";
+                      $sql_status2 = "SELECT * FROM pedido_status WHERE pedido_status = '2'";
+                      $sql_status3 = "SELECT * FROM pedido_status WHERE pedido_status = '3'";
+                      $sql_status4 = "SELECT * FROM pedido_status WHERE pedido_status = '4'";
+                      $sql_status5 = "SELECT * FROM pedido_status WHERE pedido_status = '5'";
+                      
+
+                      $resultado_status1 = mysqli_query($conn, $sql_status1);
+                      while ($array_status1 = mysqli_fetch_array($resultado_status1)) {
+                        $contador_status1 =  $contador_status1 +1;
+                      };
+
+                      $resultado_status2 = mysqli_query($conn, $sql_status2);
+                      while ($array_status2 = mysqli_fetch_array($resultado_status2)) {
+                        $contador_status2 =  $contador_status2 +1;
+                      };
+
+                      $resultado_status3 = mysqli_query($conn, $sql_status3);
+                      while ($array_status3 = mysqli_fetch_array($resultado_status3)) {
+                        $contador_status3 =  $contador_status3 +1;
+                      };
+
+                      $resultado_status4 = mysqli_query($conn, $sql_status4);
+                      while ($array_status4 = mysqli_fetch_array($resultado_status4)) {
+                        $contador_status4 =  $contador_status4 +1;
+                      };
+
+                      $resultado_status5 = mysqli_query($conn, $sql_status5);
+                      while ($array_status5 = mysqli_fetch_array($resultado_status5)) {
+                        $contador_status5 =  $contador_status5 +1;
+                      };
+                
+
                       $contador2 = 0;
                       //$sql2 = "SELECT * FROM `pedido`";
                       $sql2= "SELECT distinct id_pedido, count(numero_pedido) from pedido group by numero_pedido";
@@ -204,11 +242,11 @@ include '../conexao.php';?>
                 </div>
               </div>
             </div>
-<!--
-             Pie Chart 
+
+             <!-- Pie Chart -->
             <div class="col-xl-9 col-lg-8">
               <div class="card shadow mb-4">
-                 Card Header - Dropdown 
+                 <!-- Card Header - Dropdown -->
                 <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
                   <h6 class="m-0 font-weight-bold text-primary">Quantidade de Pedidos</h6>
                   <div class="dropdown no-arrow">
@@ -224,49 +262,45 @@ include '../conexao.php';?>
                     </div>
                   </div>
                 </div>
-                 Card Body 
+                 <!-- Card Body -->
                 <div class="card-body">
                   <div class="chart-pie pt-4 pb-2">
                     <canvas id="myPieChart"></canvas>
                   </div>
                   <html>
-                    <head>
-                      <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-                      <script type="text/javascript">
-                        //google.charts.load('current', {'packages':['corechart']});
-                        google.charts.setOnLoadCallback(drawChart);
+  <head>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load('current', {'packages':['corechart']});
+      google.charts.setOnLoadCallback(drawVisualization);
 
-                        //function drawChart() {
-                          //var data = google.visualization.arrayToDataTable([
-                           //['Mês', 'Pedidos', 'Clientes'],
-                            //['Jun',  2, 1],
-                           // ['Jul',  1, 5],
-                           // ['Set',  2, 6],
-                            //['Out',  5, 6],
-                            //['Nov',  6, 7],
-                            //['Dez',  5, 8]
+      function drawVisualization() {
+        // Some raw data (not necessarily accurate)
+        var data = google.visualization.arrayToDataTable([
+          ['Status Pedido', 'Confirmado', 'Processando', 'Preparando', 'Despachada', 'Entregue'],
+          ['', <?php echo $contador_status1 ?>, <?php echo $contador_status2 ?>, <?php echo $contador_status3 ?> , <?php echo $contador_status4 ?> , <?php echo $contador_status5 ?>],
+        ]);
 
-                          //]);
+        var options = {
+          title : 'Status de Todos os Pedidos',
+          vAxis: {title: 'Quantidade'},
+          hAxis: {title: 'Status'},
+          seriesType: 'bars',
+          series: {5: {type: 'line'}}
+        };
 
-                          //var options = {
-                           // title: 'Pedidos x Clientes',
-                            //curveType: 'function',
-                            //legend: { position: 'bottom' }
-                         // };
-
-                          //var chart = new google.visualization.LineChart(document.getElementById('curve_chart'));
-
-                          //chart.draw(data, options);
-                        //}
-                      </script>
-                    </head>
-                  <body>
-                    <div id="curve_chart" style="width: 700px; height: 500px"></div>
-                  </body>
-                  </html>
+        var chart = new google.visualization.ComboChart(document.getElementById('chart_div'));
+        chart.draw(data, options);
+      }
+    </script>
+  </head>
+  <body>
+    <div id="chart_div" style="width: 700px; height: 500px;"></div>
+  </body>
+</html>
                 </div>
               </div>
-            </div>-->
+            </div>
           </div>
 
         </div>

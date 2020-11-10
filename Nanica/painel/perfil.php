@@ -1,7 +1,7 @@
 <?php include 'sidebar.php'?>
 
     <!-- End of Sidebar -->
-
+    
     <!-- Content Wrapper -->
     <?php include 'top.php'?>
         <!-- End of Topbar -->
@@ -11,7 +11,28 @@
 
           <!-- Page Heading -->
           <h1 class="h3 mb-4 text-gray-800">Perfil do Usuário</h1>
-    
+            <?php 
+                /*session_start();
+                $email_momento = $_SESSION['email'];
+                $sql_select = "SELECT * FROM `usuarios` WHERE email ='$email_momento'";
+                $busca_select = mysqli_query($conn, $sql_select);
+
+                while ($array = mysqli_fetch_array($busca_select)) {
+                  $id_usuarios_select = $array['id_usuarios'];
+                  $senha_select = $array['senha'];
+                  $nome_select = $array['nome'];
+                  $email_select = $array['email'];
+                  $cpf_select = $array['cpf'];
+                  $endereco_select = $array['endereco'];
+                  $num_select = $array['num'];
+                  $bairro_select = $array['bairro'];
+                  $cep_select = $array['cep'];
+                  $celular_select = $array['celular'];
+                  $nascimento_select = $array['nascimento'];
+                }
+                var_dump($celular_select);*/
+
+            ?>
           <form action="update_usuario_processa.php" method="POST">
             <div class="form-group">
             <label for="exampleInputEmail1">Senha</label>
@@ -73,7 +94,7 @@
             </div>
 
             <div class="form-check">
-            <input class="form-check-input" type="radio" name="adminn" value="2">
+            <input class="form-check-input" type="radio" name="adminn" value="2" checked>
             <label class="form-check-label" for="exampleRadios1">Admin</label>
             </div>
 

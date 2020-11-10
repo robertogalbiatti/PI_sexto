@@ -14,8 +14,26 @@ session_start();
     $cep = $_POST['cep'];
     $celular = $_POST['celular'];
     $nascimento = $_POST['nascimento'];
+    $adminn = $_POST['adminn'];
 
     $nome_usuario = $_SESSION['nome'];
+
+    $sql_select = "SELECT * FROM `usuarios` WHERE id_usuarios='$id_usuarios'";
+    $busca_select = mysqli_query($conn, $sql_select);
+
+    while ($array = mysqli_fetch_array($busca_select)) {
+      $id_usuarios_select = $array['id_usuarios'];
+      $senha_select = $array['senha'];
+      $nome_select = $array['nome'];
+      $email_select = $array['email'];
+      $cpf_select = $array['cpf'];
+      $endereco_select = $array['endereco'];
+      $num_select = $array['num'];
+      $bairro_select = $array['bairro'];
+      $cep_select = $array['cep'];
+      $celular_select = $array['celular'];
+      $nascimento_select = $array['adminn'];
+    }
 
     if  ($senha == null) {
         $senha = $_SESSION['senha'];
@@ -35,10 +53,13 @@ session_start();
         $cep = $_SESSION['cep'];
     } if ($celular == null){
         $celular = $_SESSION['celular'];
-    } if ($nascimento == null)
+    } if ($nascimento == null){
         $nascimento = $_SESSION['nascimento'];
+    } if ($adminn == null){
+        $adminn = $_SESSION['adminn'];
+    }
 
-    $sql = "UPDATE usuarios SET senha='$senha', nome='$nome', email='$email', cpf='$cpf', endereco='$endereco', num='$num', bairro='$bairro', cep='$cep', celular='$celular', nascimento='$nascimento', adminn='$adminn_select' where id_usuarios='$id_usuarios' ";
+    $sql = "UPDATE usuarios SET senha='$senha', nome='$nome', email='$email', cpf='$cpf', endereco='$endereco', num='$num', bairro='$bairro', cep='$cep', celular='$celular', nascimento='$nascimento', adminn='$adminn' where id_usuarios='$id_usuarios' ";
     $update = mysqli_query($conn, $sql);
 
     $log = "INSERT INTO `log` () VALUES (NULL, '$nome_usuario', 'Usuário modificado!', now())"; 
@@ -48,7 +69,7 @@ session_start();
    {
      //header('location:compras.html');
      echo '<script> alert("Perfil atualizado!")</script>';
-     //echo '<script>window.location.href = "/painel/index.php";</script>';
+     echo '<script>window.location.href = "/painel/index.php";</script>';
      $_SESSION['senha'] = $senha;
      $_SESSION['nome'] = $nome;
      $_SESSION['email'] = $email;
@@ -60,7 +81,7 @@ session_start();
      $_SESSION['celular'] = $celular;
      $_SESSION['nascimento'] = $nascimento;
      $_SESSION['adminn'] = $adminn;
-     //echo '<script>window.location.href = "/painel/perfil.php";</script>';
+     /*echo '<script>window.location.href = "/painel/perfil.php";</script>';
      var_dump($_SESSION['senha']);
      var_dump($_SESSION['nome']);
      var_dump($_SESSION['email']);
@@ -71,7 +92,7 @@ session_start();
      var_dump($_SESSION['cep']);
      var_dump($_SESSION['celular']);
      var_dump($_SESSION['nascimento']);
-     var_dump($_SESSION['adminn']);
+     var_dump($_SESSION['adminn']);*/
 
    }
 

@@ -1,8 +1,8 @@
 <?php 
 if ($_SESSION['adminn'] !== 2) {
-  session_destroy();
+  session_start();
 }
-session_start();
+//session_start();
 
 include '../conexao.php';
 
@@ -12,6 +12,7 @@ $senha = $_POST['senha'];
 //var_dump($email);
 //var_dump($senha);
 $login = mysqli_query($conn, "SELECT * FROM `usuarios` WHERE senha ='$senha' AND email = '$email' AND adminn = '2'");
+
 
 $res = mysqli_fetch_row($login);
    if($res)
